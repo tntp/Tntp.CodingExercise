@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TNTP Coding Exercise</title>
+    <style>
+        body {
+            background: #fff;
+            color: #505050;
+            font: 14px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        #header {
+            background: #efefef;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: normal;
+            margin: 0;
+            padding: 0 30px;
+            line-height: 150px;
+        }
+
+        .header_p {
+            font-size: 20px;
+            color: #fff;
+            background: #969696;
+            padding: 0 30px;
+            line-height: 50px;
+        }
+
+        #main {
+            padding: 0px 50px;
+            
+        }
+
+        .section {
+            width: 99%;
+            float: left;
+            margin: 0 0 0 0;
+            
+        }
+
+            .section h2 {
+                font-size: 13px;
+                text-transform: uppercase;
+                margin: 0;
+                border-bottom: 1px solid silver;
+                padding-bottom: 12px;
+                margin-bottom: 8px;
+            }
+
+            .section.first {
+                width: 99%;
+                margin-left: 0;
+                padding-bottom: 20px;
+                
+            }
+
+                .section.first h2 {
+                    font-size: 24px;
+                    text-transform: none;
+                    margin-bottom: 10px;
+                    border: none;
+                }
+
+                
+
+            .section.last {
+                margin-right: 0;
+            }
+
+        ul {
+          
+            padding-left: 20px;
+            margin: 0;
+            
+        }
+
+        li {
+            padding: 4px 0;
+        }
+
+        a {
+            color: #267cb2;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>TNTP Coding Exercise</h1>
+        <p class="header_p">Release Notes</>
+</div>
+
+    <div id="main">
+        <div class="section first">
+            <h2>Environment</h2>
+            <ul style="font-weight:bold;">
+                <li>Microsoft Visual Basic 2013</li>
+                <li style="list-style:none">
+                    <ul style="font-weight:normal;">
+                        <li>
+                            C# and ASP.NET
+                        </li>
+                        <li>
+                            .NET Framework 4.5
+                        </li>
+                        <li>
+                            Project URL: http://localhost:55275/Tntp.CodingExercise
+                        </li>
+                        <li>
+                            Add'l NuGet Packages: JSON.NET, Official MongoDB C# Driver
+                        </li>
+                        <li>
+                            WebForms
+                        </li>
+                        <li>
+                            Bootstrap v3.0.0
+                        </li>
+                    </ul>
+                </li>
+
+                <li>MongoDB 2.6.4 for Windows x64</li>
+                <li style="list-style:none">
+                    <ul style="font-weight:normal;">
+                        <li>
+                            Listener: MongoDB's Default Listener (port:27017)
+                        </li>
+                        <li>
+                            Database Name: developersDB
+                        </li>
+                        <li>
+                            Collection Name: DevelopersInfo
+                        </li>
+                    </ul>
+                </li>
+                <li>Microsoft SQL Server 2014 (Evaluation Copy)</li>
+                <li style="list-style:none">
+                    <ul style="font-weight:normal;">
+                        <li>
+                            Database Name: developersDB
+                        </li>
+                        <li>
+                            Collection Name: DevelopersInfo
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>ConnectionStrings are inside Web.config file.</p>
+        </div>
+        <div class="section first">
+            <h2>Project Goal</h2>
+            <p>Reading information from a MongoDB collection, denormalize the heirarchical data, 
+            and writes that data to a SQL database, in order to facilitate a better end-user reporting experience.</p>
+        </div>
+
+        <h2>The SQL Table Structure:</h2>
+        <table>
+            <tr style="vertical-align:top">
+                <td>
+                    <table border="1">
+                        <tr>
+                            <td colspan="3" style="font-weight:bold; text-align:center">Developers</td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>nvarchar(256)</td>
+                            <td>NOT NULL (Primary Key)</td>
+                        </tr>
+                        <tr>
+                            <td>FirstName</td>
+                            <td>nvarchar(100)</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>Title</td>
+                            <td>nvarchar(100)</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>LastName</td>
+                            <td>nvarchar(100)</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>BirthDateTime</td>
+                            <td>datetime</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>DeathDateTime</td>
+                            <td>datetime</td>
+                            <td>NULL</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <td colspan="3" style="font-weight:bold; text-align:center">Contribs</td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>nvarchar(256)</td>
+                            <td>NOT NULL</td>
+                        </tr>
+                        <tr>
+                            <td>FirstName</td>
+                            <td>nvarchar(100)</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>LastName</td>
+                            <td>nvarchar(100)</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>BirthDateTime</td>
+                            <td>datetime</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>ContribName</td>
+                            <td>nvarchar(100)</td>
+                            <td>NULL</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <td colspan="3" style="font-weight:bold; text-align:center">Awards</td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>nvarchar(256)</td>
+                            <td>NOT NULL</td>
+                        </tr>
+                        <tr>
+                            <td>FirstName</td>
+                            <td>nvarchar(100)</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>LastName</td>
+                            <td>nvarchar(100)</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>BirthDateTime</td>
+                            <td>datetime</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>AwardName</td>
+                            <td>nvarchar(512)</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>Year</td>
+                            <td>int</td>
+                            <td>NULL</td>
+                        </tr>
+                        <tr>
+                            <td>GivenBy</td>
+                            <td>nvarchar(512)</td>
+                            <td>NULL</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p>
+            Please note that there are foreign key references in "Contribs" and "Awards" tables. In order to prevent
+            orphan entries in "Awards" and "Contribs" tables, a cascade rule is created on delete action.
+            <ul style="font-weight:normal;">
+                <li style="list-style:none">
+                    Relationships: Developers.ID -> Awards.ID and Developers.ID -> Contribs.ID. (Action: On Delete -> Cascade)
+                </li>
+                <li style="list-style:none">
+                    Awards.ID and Award.AwardName are unique key columns.
+                </li>
+                <li style="list-style:none">
+                    Contribs.ID and Contribs.ContribName are unique key columns.
+                </li>
+            </ul>
+        </p>
+
+
+        <div class="section first">
+            <h2>How it works</h2>
+            <h3>Overview</h3>
+            <p>
+                On Page_load of Default.aspx, a MongoCursor reads all the documents from DevelopersInfo. After reading, MongoCursor 
+                is sent to a class called "deserialization_TNTP.cs" (in Classes folder), which returns a DataSet. 
+                After returning from "deserialization_TNTP.cs", the system sends the DataSet to "WriteToSQL.cs". 
+                In this class, DataSet is transferred to the SQL tables. "WriteToSQL.cs" class returns an integer
+                (for handling error purposes - returns 0 if everything is fine; returns 1 if there is an error). 
+            </p>
+            <h3>CodeBehind - Step by Step</h3>
+            <p>
+                First thing in "deserialization_TNTP.cs" class: the cursor is parsed to a JSon string. 
+                Then, the JSon string is deserialized into an object.
+                Last, the information that the system gathered from JSon string is put into three tables in DataSet:
+                <ul style="font-weight:normal;">
+                    <li style="list-style:none">
+                        Developers (Columns: ID (string) | FirstName (string) | aka (string) | LastName (string) | Title (string) | BirthDateTime (DateTime) | DeathDateTime (DateTime))
+                    </li>
+                    <li style="list-style:none">
+                        Contribs (Columns: ID (string) | FirstName (string) | LastName (string) | BirthDateTime (DateTime) | ContribName (string))
+                    </li>
+                    <li style="list-style:none">
+                        Awards (Columns: ID (string) | FirstName (string) | LastName (string) | BirthDateTime (DateTime) | AwardName (string) | Year (int) | GivenBy (string))
+                    </li>
+                </ul>
+            </p>
+            <p>In the final step, the class returns a DataSet. If there is an error, a null DataSet is returned.</p>
+            
+            <p>Now the data that the system gets from MongoDB is ready to be copied into an SQL database. </p>
+
+            <p>In "WriteToSQL.cs", the system creates 3 temporary tables (#developers, #contribs and #awards), 
+            copies the dataSet data inside these tables
+            with SqlBulkCopy command, compares the temporary tables with the production, inserts new entries to the production tables with 
+            MERGE...WHEN NOT MATCHED command, and finally drops the temporary tables. The class returns 0 if there is no
+            error and 1 if something goes wrong.</p>
+            
+            <p>Also in "WriteToSQL.cs", the new inserted rows and total row counts are set in the session variables 
+            to display migration information to the user. "@@ROWSCOPE" is used to count the inserted rows.</p>
+            <p>UPSERT method reference: <a target="_blank" href="http://www.databasejournal.com/features/mssql/article.php/3739131/UPSERT-Functionality-in-SQL-Server-2008.htm">
+            http://www.databasejournal.com/features/mssql/article.php/3739131/UPSERT-Functionality-in-SQL-Server-2008.htm </a>.</p>
+            
+            <h3>Display the Information to the User</h3>
+            
+            <p>On Default.aspx, the user can see the migration information (total row count, total new row count) 
+            in a gridview that displays the developers' root information, contributions and awards 
+            (please note that clicking on the column headers in gridview re-sorts the data. Also, there is a small Javascript "HighLight" function 
+            that makes reading easier).</p>
+
+            <h3>SQL DB Optimization</h3>
+            
+            <p>To make the database smaller, instead of copying "FirstName", "LastName" and "BirthDateTime" to "Awards" and "Contribs" tables, 
+            only the "ID" column should be copied. (e.g., Awards INNER JOIN Developers ON Developers.ID = Awards.ID etc.).</p>
+        </div>
+    </div>
+</body>
+</html>
+
+	
