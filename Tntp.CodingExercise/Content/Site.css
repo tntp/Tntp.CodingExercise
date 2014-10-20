@@ -1,0 +1,125 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*Generated from Designmycss.com*/
+table.#FFFFFF
+{
+    border-spacing:1px;
+    border-style:solid;
+    border-width:2px;
+    border-color:#2C4F85;
+    font:14px Georgia, serif;
+    padding:0;
+    box-shadow:0px 0px #000000;
+    border-radius:10px;
+}
+ 
+th.#FFFFFF
+{
+    color:#FFFFFF;
+    background:#2C7EDB;
+    border-style:solid;
+    border-width:1px;
+    border-color:#2C4F85;
+    font-weight:bold;
+    padding:5px;
+    text-align:center;
+    vertical-align:top;
+}
+ 
+tr
+{
+    color:#5A7ECC;
+    font-weight:normal;
+}
+ 
+tr:hover td
+{
+    color:#081C6B;
+}
+ 
+td
+{
+    padding:3px 5px;
+    text-align:left;
+    vertical-align:top;
+}
+ 
+th.#FFFFFF:first-child
+{
+    border-top-left-radius:10px;
+}
+ 
+th.#FFFFFF:last-child
+{
+    border-top-right-radius:10px;
+}
+ 
+tr:last-child td:first-child
+{
+    border-bottom-left-radius:10px;
+}
+ 
+tr:last-child td:last-child
+{
+    border-bottom-right-radius:10px;
+}
