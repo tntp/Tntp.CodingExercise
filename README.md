@@ -3,7 +3,7 @@ TNTP Coding Exercise
 
 You've been selected as a candidate for the Software Developer position at TNTP. Great! This project is intended to see how you work in a fashion resembling real development. 
 
-You'll be tasked with taking the instructions in this project (including a [user story](https://www.mountaingoatsoftware.com/agile/user-stories), [Behavior-Driven-Design scenarios](https://dannorth.net/introducing-bdd/), and some helpful pointers), and creating a working peice of software. We'll then review your submission for coding style, best practices, and accuracy in terms of meeting the requirements.
+You'll be tasked with taking the instructions in this project (including a [user story](https://www.mountaingoatsoftware.com/agile/user-stories), [Behavior-Driven-Design scenarios](https://dannorth.net/introducing-bdd/), and some helpful pointers), and creating a working piece of software. We'll then review your submission for coding style, best practices, and accuracy in terms of meeting the requirements.
 
 The project: "Simple Twitter", a small microblogging solution that will allow people to post a name, and a comment, and see other comments that other people have posted. Things that you'll need to include are a database (or other effective data storage mechanism) to house the comments and user names, a web-based front-end, and some validation to make sure garbage isn't making it into the data storage layer.
 
