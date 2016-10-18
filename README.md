@@ -48,11 +48,13 @@ Then they should see all of the comments in the system, in reverse chronological
 
 ## Instructions
 
-- If you don't already have one, [create an account](https://github.com/join) on Github, and [fork this project](https://help.github.com/articles/fork-a-repo/)
-- Install a Git client ([Github provides one that's simple and intuitive](https://desktop.github.com/)) and [clone your fork](https://help.github.com/articles/cloning-a-repository/) of this project
-- Create a branch
+- If you don't already have one, [create an account](https://github.com/join) on Github
+- Install a Git client ([Github provides one that's simple and intuitive](https://desktop.github.com/))
+- [Create a fork this project into your own Github account](https://help.github.com/articles/fork-a-repo/) (do **NOT** clone the project from the TNTP account)
+- [Clone your fork](https://help.github.com/articles/cloning-a-repository/) of this project
 - Develop your solution
-- When finished, ensure that your solution is in the cloned repository, and push your changes to your fork of the repository
-- Do a [pull request](https://help.github.com/articles/about-pull-requests/) 
+- When finished, ensure that your solution is in the cloned repository
+- Push your changes to your fork of the repository
+- Perform a [pull request](https://help.github.com/articles/about-pull-requests/), and we'll be able to see your code in the TNTP account!
 
 Feel free to reach out at any time to your contact at TNTP with any questions. **Good luck!**
