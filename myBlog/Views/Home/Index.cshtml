@@ -1,0 +1,30 @@
+﻿@model myBlog.Models.BlogModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@Html.Action("AddComment")
+
+
+
+<h2>Comments</h2>
+@if(Model.Comments.Count() == 0)
+{
+    <p>No Comments yet</p>
+}
+else
+{
+    foreach (var comment in Model.Comments)
+    {
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="comment">
+                    <p class="commentText well">@comment.CommentText</p>
+                    <p class="comment-user-date">@comment.CommentUserName - @String.Format("{0:t}", comment.CommentPostDate)</p>
+                </div>
+            </div>
+        </div>
+    }
+}

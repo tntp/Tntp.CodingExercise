@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IntranetAchievaWidgetsModelStoreContainer" CdmEntityContainer="BlogEntities">
+    <EntitySetMapping Name="MicroBlogs">
+      <EntityTypeMapping TypeName="IntranetAchievaWidgetsModel.MicroBlog">
+        <MappingFragment StoreEntitySet="MicroBlog">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="CommentUserName" ColumnName="CommentUserName" />
+          <ScalarProperty Name="CommentText" ColumnName="CommentText" />
+          <ScalarProperty Name="CommentPostDate" ColumnName="CommentPostDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
