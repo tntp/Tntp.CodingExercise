@@ -1,0 +1,13 @@
+# Please clone 
+# Install all necessary packages
+    commands
+    npm Install
+    npm init
+    npm install body-parser
+    npm install express
+    npm install guid
+    npm install mongo
+    npm install promise
+# to run the application
+    node server.js (in the terminal in the same directory)
+    go to browser and hit localhost:3000 
