@@ -16,18 +16,28 @@ $(document).ready(function() {
                 refresh_content(response);
             }
         });
-        setTimeout(refresh_x1, 2000);
+        //setTimeout(refresh_x1, 2000);
     };
 
     function displayErrors(errorList) {
         $("#ulErr").empty();
         errorList.forEach(function(_error) {
-            var list_item = '<div class="alert alert-danger" role="alert">' +
-                '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>' +
-                '<span class="sr-only">Error:</span>' +
-                _error +
-                '</div>';
-            $("#ulErr").append(list_item);
+
+            var div_item = document.createElement('div');
+            $(div_item).addClass('alert alert-danger');
+            $(div_item).attr('role', 'alert');
+            var span_icon = document.createElement('span');
+            $(span_icon).addClass('glyphicon glyphicon-exclamation-sign');
+            $(span_icon).attr('aria-hidden', 'true');
+            $(div_item).append(span_icon);
+
+            var span_msg = document.createElement('span');
+            $(span_msg).addClass('sr-only');
+            $(span_msg).text('Error : ');
+            $(div_item).append(span_msg);
+            $(div_item).append("  " + _error);
+
+            $("#ulErr").append(div_item);
         }, this);
 
     }
@@ -37,15 +47,25 @@ $(document).ready(function() {
         $("#ulPosts").empty();
         comments.forEach(function(post) {
 
-            var list_item = '';
-            list_item = '<li id="' + post._id + '" class="list-group-item">' +
-                '<div data-id="' + post._id + '">' +
-                '<h3>' + post.name + '</h3>' +
-                '<b>Says : </b>' + post.comment +
-                '</div>' +
-                '</li>';
 
-            $("#ulPosts").append(list_item);
+            var li_item = document.createElement('li');
+            $(li_item).addClass('list-group-item');
+            $(li_item).attr('id', post._id);
+
+            var div_content = document.createElement('div');
+            $(div_content).data('id', post._id);
+
+            var header = document.createElement('h3');
+            $(header).text(post.name);
+
+            var comment = $('<b>Says : </b>');
+            $(div_content).append(header);
+            $(div_content).append(comment);
+            $(div_content).append(post.comment);
+            $(li_item).append(div_content);
+
+
+            $("#ulPosts").append(li_item);
 
         }, this);
     };
