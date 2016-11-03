@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tntpTwitter by Joe Moorman</title>
+    <link rel="stylesheet" type="text/css" href="./www/css/index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./www/img/t.ico" />
+    <script src="./www/js/index.js"></script>
+  	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+</head>
+
+<body>
+</head>
+<body>
+	<!-- <div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+	<script src="./www/test/tests.js"></script> -->
+	<!-- Dialog layer -->
+	<div id="dialogScn">
+		<div id="signInDialogContent" class="dialogContent">
+			<span>Username</span><input id="myUsername" type="text" onchange="myUsername = this.value;"/></br>
+			<span>Password</span><input id="myPwd" type="password" onchange="myPwd = this.value;"/></br>
+			<button id="createNewBtn" onclick="Cancel(); CreateUserDialogDisplay();">New user</button>
+			<button onclick="Cancel();">Cancel</button>
+			<button id="signInBtn" onclick="SignIn();">Sign in</button>
+		</div>
+		<div id="createUserDialogContent" class="dialogContent">
+			<span>Username</span><input id="newUsername" type="text"/></br>
+			<span>Password</span><input id="newPwd" type="password"/></br>
+			<span>Display Name</span><input id="newDisplayName" type="text"/></br>
+			<button onclick="Cancel();">Cancel</button>
+			<button id="signInBtn" onclick="CreateNewUser();">Create</button>
+		</div>
+		<div id="aboutDialogContent" class="dialogContent">
+			<span>Happy Halloween! &#127875;</br>(This was written by Joe Moorman on 10/31/2016.)</span></br>
+			<button onclick="Cancel();">Okay</button>
+		</div>
+		<div id="errDialogContent" class="dialogContent">
+			<span id="errText"></span></br>
+			<button onclick="Cancel();">Okay</button>
+		</div>
+	</div>
+
+	<!-- Default visible layer -->
+	<div id="container">
+	<div class="heading">tntpTwitter</div>
+		<div id="postCommentBox">
+			<div class="commentBox pendingComment">
+				<textarea id="commentText" placeholder="Please sign in to leave a comment." maxlength="140" onkeyup="UpdateCharCount(this);" disabled></textarea><div id="characterCount"></div><img id="addBtn" onclick="AddComment();" style="width:35px;">
+				<div id="commentName"></div>
+				</div>
+		</div>
+		<div id="boundaryBar"></div>
+		<div id="commentFeed">
+		</div>
+	</div>
+	<div id="miscBar">
+		<div id="about" onclick="AboutDialogDisplay();"><span>About</span></div>
+		<div id="userSignin" onclick="SigninDialogDisplay();"><span>Sign In</span></div>
+		<div id="randomComment" onclick="RandomComment();"><span>Random Comment</span></div>
+	</div>
+</body>
+</html>
