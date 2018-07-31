@@ -44,6 +44,7 @@ Then they should see all of the comments in the system, in reverse chronological
 - The project *must* be written in either C#/.NET (if so, please use .NET Framework version 4.5+, ASP.NET MVC 5 or above, or .NET Core), Python or NodeJS (or, a combination of the two is acceptable; this **is** a requirement).
 - We recommend using SQL Server, PostgreSQL, or MongoDB (all software you'll be working with at TNTP) for your back-end (this is **not** a requirement)
 - We highly encourage you to explore using cloud services such as Amazon Web Services and Microsoft Azure as part of your solution (this is **not** a requirement). Solutions developed to utilize serverless technologies are also strongly encouraged - for example, [Serverless](https://serverless.com/).
+- We encourage implementing your solution using a microservices architecture with a RESTful backend API component and a reactive frontend component.
 - Please include unit tests that cover the scenarios listed above (this **is** a requirement)
 
 
