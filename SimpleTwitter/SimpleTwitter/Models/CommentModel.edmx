@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SimpleTwitterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="commentKey">
+          <Key>
+            <PropertyRef Name="Next_Id" />
+          </Key>
+          <Property Name="Next_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="commentTable">
+          <Key>
+            <PropertyRef Name="Comment_Id" />
+          </Key>
+          <Property Name="Comment_Id" Type="int" Nullable="false" />
+          <Property Name="Comment_Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Comment_Comment" Type="nvarchar" MaxLength="140" Nullable="false" />
+          <Property Name="Comment_Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SimpleTwitterModelStoreContainer">
+          <EntitySet Name="commentKey" EntityType="Self.commentKey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="commentTable" EntityType="Self.commentTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SimpleTwitterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="commentKey">
+          <Key>
+            <PropertyRef Name="Next_Id" />
+          </Key>
+          <Property Name="Next_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="commentTable">
+          <Key>
+            <PropertyRef Name="Comment_Id" />
+          </Key>
+          <Property Name="Comment_Id" Type="Int32" Nullable="false" />
+          <Property Name="Comment_Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Comment_Comment" Type="String" MaxLength="140" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Comment_Date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="SimpleTwitterEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="commentKeys" EntityType="Self.commentKey" />
+          <EntitySet Name="commentTables" EntityType="Self.commentTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SimpleTwitterModelStoreContainer" CdmEntityContainer="SimpleTwitterEntities4">
+          <EntitySetMapping Name="commentKeys">
+            <EntityTypeMapping TypeName="SimpleTwitterModel.commentKey">
+              <MappingFragment StoreEntitySet="commentKey">
+                <ScalarProperty Name="Next_Id" ColumnName="Next_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="commentTables">
+            <EntityTypeMapping TypeName="SimpleTwitterModel.commentTable">
+              <MappingFragment StoreEntitySet="commentTable">
+                <ScalarProperty Name="Comment_Id" ColumnName="Comment_Id" />
+                <ScalarProperty Name="Comment_Name" ColumnName="Comment_Name" />
+                <ScalarProperty Name="Comment_Comment" ColumnName="Comment_Comment" />
+                <ScalarProperty Name="Comment_Date" ColumnName="Comment_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

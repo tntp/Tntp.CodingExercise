@@ -1,0 +1,96 @@
+﻿
+@model SimpleTwitter.Models.CommentViewMaster
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+
+<div class="container">
+    <form id="CommentForm">
+        <div class="container">
+            <div class="col-xs-11">
+                <h3>Enter your name and a comment below</h3>
+            </div>
+            <div class="col-xs-11">
+                @Html.TextBoxFor(model => model.Comment_Name, new { maxlength = 128, @class = "form-control", @placeholder = "Name" })
+                @*        @Html.ValidationMessageFor(model => model.Comment_Name, "", new { @class = "error" })*@
+            </div>
+            <div class="col-xs-1">
+                <h4 class="text-danger">**</h4>
+            </div>
+            <div class="col-xs-11">
+                @Html.TextBoxFor(model => model.Comment_Comment, new { maxlength = 140, @class = "form-control", @placeholder = "Comment" })
+                @*        @Html.ValidationMessageFor(model => model.Comment_Comment, "", new { @class = "error" })*@
+                <input type="reset" value="Submit" class="btn btn-block btn-primary" id="btnSubmit" />
+            </div>
+            <div class="col-xs-1">
+                <h4 class="text-danger">**</h4>
+            </div>
+            <div>
+                <h3></h3>
+            </div>
+
+        </div>
+        <div class="container">
+            @if (Model != null && Model.CVMList != null)
+            {
+
+                foreach (var item in Model.CVMList)
+                {
+                    <div class="container">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                @item.Comment_Name
+                            </div>
+                            <div class="panel-body">
+                                @item.Comment_Comment
+                            </div>
+                            <div class="panel-footer">
+                                @item.Comment_Date
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            }
+        </div>
+    </form>
+
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $("#btnSubmit").click(function () {
+            debugger
+
+            var data = $("#CommentForm").serialize();
+
+            $.ajax({
+                type: "POST",
+                url: "/home/index",
+                data: data,
+                success: function (response) {
+                    location.reload();
+                    //alert("Made it here!");
+                }
+            })
+        })
+    })
+
+</script>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

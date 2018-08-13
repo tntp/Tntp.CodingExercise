@@ -1,0 +1,24 @@
+Simple Twitter
+
+Note that the system works to spec.
+I was unable to complete the unit tests to show the spec working.
+The database is MS Sql in Azure; info below.
+Also, I have 2 dev environments.
+One, SimpleTwitterDB, creates the database environment.
+The other one, SimpleTwitter, is the main program.
+
+Thank you for this opportunity,
+Richard (Jeryl) Hedrick
+jerylhedrick@hotmail.com
+540-556-3723
+
+
+Azure SQL database
+
+Database Name       : SimpleTwitter
+Resource group      : SimpleTwitter
+Server Name         : simpletwitterrjh.database.windows.net
+Server admin login  : simpletwitteradmin
+Password            : SimpleTwitter1389#
+
+
