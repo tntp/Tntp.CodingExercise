@@ -1,8 +1,10 @@
-# Tntp.Solution exclusions - .vs, packages, bin, and obj directories; .user files
+# Tntp.Solution exclusions - .vs, packages, bin, and obj directories; .dbmdl, .jfm, and .user files
 Tntp.Solution/.vs/
 Tntp.Solution/packages/
 Tntp.Solution/Tntp.Database/bin/
 Tntp.Solution/Tntp.Database/obj/
+Tntp.Solution/Tntp.Database/Tntp.Database.dbmdl
+Tntp.Solution/Tntp.Database/Tntp.Database.jfm
 Tntp.Solution/Tntp.Database/Tntp.Database.sqlproj.user
 Tntp.Solution/Tntp.WebApplication/bin/
 Tntp.Solution/Tntp.WebApplication/obj/
