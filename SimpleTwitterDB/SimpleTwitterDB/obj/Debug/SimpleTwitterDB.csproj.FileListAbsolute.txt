@@ -1,0 +1,7 @@
+C:\Work\TNTP\SimpleTwitterDB\SimpleTwitterDB\bin\Debug\SimpleTwitterDB.exe.config
+C:\Work\TNTP\SimpleTwitterDB\SimpleTwitterDB\bin\Debug\SimpleTwitterDB.exe
+C:\Work\TNTP\SimpleTwitterDB\SimpleTwitterDB\bin\Debug\SimpleTwitterDB.pdb
+C:\Work\TNTP\SimpleTwitterDB\SimpleTwitterDB\obj\Debug\SimpleTwitterDB.csprojAssemblyReference.cache
+C:\Work\TNTP\SimpleTwitterDB\SimpleTwitterDB\obj\Debug\SimpleTwitterDB.csproj.CoreCompileInputs.cache
+C:\Work\TNTP\SimpleTwitterDB\SimpleTwitterDB\obj\Debug\SimpleTwitterDB.exe
+C:\Work\TNTP\SimpleTwitterDB\SimpleTwitterDB\obj\Debug\SimpleTwitterDB.pdb

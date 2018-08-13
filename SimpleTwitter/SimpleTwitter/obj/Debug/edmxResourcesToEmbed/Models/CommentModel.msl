@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SimpleTwitterModelStoreContainer" CdmEntityContainer="SimpleTwitterEntities4">
+    <EntitySetMapping Name="commentKeys">
+      <EntityTypeMapping TypeName="SimpleTwitterModel.commentKey">
+        <MappingFragment StoreEntitySet="commentKey">
+          <ScalarProperty Name="Next_Id" ColumnName="Next_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="commentTables">
+      <EntityTypeMapping TypeName="SimpleTwitterModel.commentTable">
+        <MappingFragment StoreEntitySet="commentTable">
+          <ScalarProperty Name="Comment_Id" ColumnName="Comment_Id" />
+          <ScalarProperty Name="Comment_Name" ColumnName="Comment_Name" />
+          <ScalarProperty Name="Comment_Comment" ColumnName="Comment_Comment" />
+          <ScalarProperty Name="Comment_Date" ColumnName="Comment_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
