@@ -1,0 +1,28 @@
+﻿@model Simple_Twitter.Entities.SimpleTwitter
+
+@{
+    ViewBag.Title = "PostTweets";
+}
+
+     @using (Html.BeginForm()) { 
+     <fieldset>
+        <legend>Post Tweets</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Handle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(Model => Model.Handle)
+            @Html.ValidationMessageFor(Model => Model.Handle)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tweet)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(Model => Model.Tweet, 6, 55, null)
+            @Html.ValidationMessageFor(Model => Model.Tweet)
+        </div>
+        <p>
+            <input type="submit" value="Post" />
+        </p>
+    </fieldset>
+    }

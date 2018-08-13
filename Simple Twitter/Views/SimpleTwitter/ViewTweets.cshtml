@@ -1,0 +1,53 @@
+﻿@model Simple_Twitter.Entities.SimpleTwitter
+
+@{
+    ViewBag.Title = "ViewTweets";
+}
+
+    @using (Html.BeginForm())
+    {
+    <fieldset>
+    <legend>View Tweets</legend>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Handle)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(Model => Model.Handle)
+        @Html.ValidationMessageFor(Model => Model.Handle)
+    </div>
+    <div class="editor-label">
+       Tweets
+    </div>
+    <div class="editor-field">
+        @{
+            
+            foreach (Simple_Twitter.Entities.SimpleTwitter
+                                        tweet in ViewBag.Tweets)
+            {
+                DateTime time = DateTime.Parse(tweet.Time);
+                string tweetTime = Simple_Twitter.Utilities.
+                    ElaspedTimeString.GetElaspedTimeString(time);                
+                    <br /><br />
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                @Html.Label(tweetTime)
+                            </div>
+                            <div class="col-lg-4">
+                                @Html.Label(tweet.Handle)
+                            </div>
+                            <div class="col-lg-4">
+                                @Html.Label(tweet.Tweet)
+                            </div>
+                        </div>
+                    </div>
+
+               // @Html.Label(sb.ToString()) 
+            }
+        }
+    </div>
+    <p>
+        <input type="submit" value="View" />
+    </p>
+</fieldset>
+}
