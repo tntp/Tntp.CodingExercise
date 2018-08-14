@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="CommentsClient">
+  <head>
+    <title>TNTP Solution in Client Subfolder</title>
+	  <meta charset="UTF-8"/>
+    <script src="https://code.angularjs.org/1.7.3/angular.min.js"></script>
+    <script src="Client/application.js"></script>
+  </head>
+  <body ng-controller="CommentsController">
+    <label for="usernameField">Username:</label>
+    <input name="usernameField" type="text" ng-model="username"/>
+    <br/>
+    <label for="commentField">Comment:</label>
+    <input name="commentField" type="text" ng-model="comment"/>
+    <br/>
+    <button ng-click="postComment()">Post</button>
+    <span ng-model="error">{{error}}</span>
+    <div ng-repeat="c in commentList">
+      <b>@{{c.Username}}</b>
+      <br/>
+      {{c.Content}}
+    </div>
+  </body>
+</html>
