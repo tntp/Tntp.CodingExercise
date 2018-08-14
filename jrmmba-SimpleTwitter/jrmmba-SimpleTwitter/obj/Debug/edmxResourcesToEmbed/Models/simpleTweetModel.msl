@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbSimpleTwitterModelStoreContainer" CdmEntityContainer="dbSimpleTwitterEntities">
+    <EntitySetMapping Name="tblTweets">
+      <EntityTypeMapping TypeName="dbSimpleTwitterModel.tblTweet">
+        <MappingFragment StoreEntitySet="tblTweets">
+          <ScalarProperty Name="tweetID" ColumnName="tweetID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="theTweet" ColumnName="theTweet" />
+          <ScalarProperty Name="dateCreate" ColumnName="dateCreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

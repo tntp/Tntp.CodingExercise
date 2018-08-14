@@ -1,0 +1,38 @@
+﻿@model IEnumerable<jrmmba_SimpleTwitter.Models.tblTweet>
+
+@{
+    ViewBag.Title = "ListTweets";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List All Tweets Most Recent First</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.theTweet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateCreate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.userName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.theTweet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateCreate)
+        </td>
+    </tr>
+}
+
+</table>
