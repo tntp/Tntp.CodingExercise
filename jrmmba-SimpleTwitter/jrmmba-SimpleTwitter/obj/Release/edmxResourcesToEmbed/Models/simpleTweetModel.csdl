@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbSimpleTwitterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblTweet">
+    <Key>
+      <PropertyRef Name="tweetID" />
+    </Key>
+    <Property Name="tweetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false">
+      <Documentation>
+        <LongDescription>User Name</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="theTweet" Type="String" MaxLength="140" FixedLength="false" Unicode="false" Nullable="false">
+      <Documentation>
+        <LongDescription>Tweet</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="dateCreate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="dbSimpleTwitterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblTweets" EntityType="Self.tblTweet" />
+  </EntityContainer>
+</Schema>
