@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="CommentsClient">
+  <head>
+    <title>TNTP Solution</title>
+	  <meta charset="UTF-8"/>
+    <script src="https://code.angularjs.org/1.7.3/angular.min.js"></script>
+    <script>
+      angular.module('CommentsClient', []).controller('CommentsController', function($scope, $http) {
+        const BadRequestStatusCode = 400;
+
+        $http.get("http://localhost:61781/api/comments").then(function(response) {
+          $scope.commentList = response.data;
+        });
+
+        $scope.postComment = function() {
+          $http.post("http://localhost:61781/api/comments", { Username: $scope.username, Content: $scope.comment }).catch(function(response) {
+            if(response.status == BadRequestStatusCode) {
+              $scope.error = response.data.Message;
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body ng-controller="CommentsController">
+    <label for="usernameField">Username:</label>
+    <input name="usernameField" type="text" ng-model="username"/>
+    <label for="commentField">Comment:</label>
+    <input name="commentField" type="text" ng-model="comment"/>
+    <button ng-click="postComment()">Post</button>
+    <span ng-model="error">{{error}}</span>
+    <div ng-repeat="c in commentList">
+      <b>@{{c.Username}}</b>
+      <br/>
+      {{c.Content}}
+    </div>
+  </body>
+</html>
