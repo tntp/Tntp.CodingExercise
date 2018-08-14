@@ -1,0 +1,17 @@
+{
+	"name":			"tntpTwitter",
+	"version":		"0.0.1",
+	"description":	"Simple Twitter-style commenting webpage.",
+	"main":			"server.js",
+	"author":		"Joe Moorman",
+	"dependencies": {
+		"express": "latest",
+		"express-resource": "latest,"
+		"bcryptjs": "*",
+		"assert": "latest",
+		"body-parser": "latest",
+		"path": "latest",
+		"mongodb": "latest"
+	},
+	"private": true
+}

@@ -1,0 +1,154 @@
+
+@keyframes headingFadeIn {
+	from {opacity: 0;}
+	to {opacity:100%;}
+}
+
+button {
+	border: 1px solid gray;
+	background-color: transparent;
+	color: black;
+	font-family: "Calibri", sans-serif;
+	padding: 4px;
+	font-size: 14px;
+}
+
+body {
+	background-color: #663096;
+	color: white;
+	font-family: "Calibri", sans-serif;
+	font-size: 16px;
+	margin: 0;
+}
+
+textarea {
+	padding: 0;
+	margin: 0;
+	resize: none;
+	font-family: "Calibri", sans-serif;
+	font-size: 16px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.heading {
+	max-height: 10%;
+	min-height: 50px;
+	line-height: 50px;
+	font-size: 50px;
+	width: 100%;
+	animation-name: headingFadeIn;
+	animation-duration: 2s;
+	padding-bottom: 20px;
+}
+
+#boundaryBar {
+	height: 0;
+	width: 100%;
+	border: 1px solid gray;
+}
+
+#container {
+	padding: 20px;
+}
+
+.notSignedIn {
+	font-style: italic;
+	cursor: auto !important;
+}
+
+#characterCount {
+	padding: 0 20px 0 20px;
+	width: 10%;
+	display: inline;
+	vertical-align: top;
+}
+
+/* Comment box (name, text, character limit properties */
+.commentBox {
+	max-height: 10%;
+	min-height: 50px;
+	width: 100%;
+	margin: 20px;
+}
+.commentBox > * {
+	padding: 0;
+	margin: 0;
+	width: 75%;
+}
+
+/* Comment feed style properties */
+#commentFeed, #postCommentBox {
+	overflow-y: scroll;
+	width: 75%;
+}
+
+.pendingComment > textarea {
+	border: 1px solid #333538;
+	background-color: #d2d5db;
+	color: black;
+}
+
+.postedComment > textarea {
+	border: 1px solid #333538;
+	background-color: #9b9fa5;
+	color: black;
+}
+
+/* Bottom bar style */
+#miscBar {
+	border-top: 1px solid gray;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	max-height: 10%;
+	min-height: 50px;
+	width: 100%;
+	z-index: 1;
+	background-color: #663096;
+}
+#miscBar > div {
+	float: left;
+	width: calc((100% / 3) - 1px);
+	max-height: 10%;
+	min-height: 50px;
+	line-height: 100%;
+	display: table;
+	text-align: center;
+	cursor: pointer;
+}
+#miscBar > div > span {
+	display: table-cell;
+	line-height: 100%;
+	vertical-align: middle;
+}
+
+/* The dialog style attributes */
+#dialogScn {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: -1;
+}
+
+.dialogContent {
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	padding: 30px;
+	background-color: white;
+	color: black;
+	opacity: 0;
+	z-index: -1;
+}
+
+.dialogContent > * {
+	margin: 5px;
+}
