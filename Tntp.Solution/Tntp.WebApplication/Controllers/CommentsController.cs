@@ -22,13 +22,13 @@ namespace Tntp.WebApplication.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
+        [Route, HttpGet]
         public IEnumerable<Comment> GetComments()
         {
             return _repository.Comments.OrderByDescending(c => c.CreationTimestamp);
         }
 
-        [HttpPost]
+        [Route, HttpPost]
         public IHttpActionResult AddComment(Comment comment)
         {
             if((comment.Username?.Length ?? 0) == 0)
