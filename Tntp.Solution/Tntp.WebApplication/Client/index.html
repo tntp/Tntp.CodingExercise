@@ -1,24 +1,48 @@
 ﻿<!DOCTYPE html>
-<html ng-app="CommentsClient">
+<html style="width: 100%" ng-app="CommentsClient">
   <head>
     <title>TNTP Solution in Client Subfolder</title>
 	  <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="Client/styles.css">
     <script src="https://code.angularjs.org/1.7.3/angular.min.js"></script>
     <script src="Client/application.js"></script>
   </head>
   <body ng-controller="CommentsController">
-    <label for="usernameField">Username:</label>
-    <input name="usernameField" type="text" ng-model="username"/>
-    <br/>
-    <label for="commentField">Comment:</label>
-    <input name="commentField" type="text" ng-model="comment"/>
-    <br/>
-    <button ng-click="postComment()">Post</button>
-    <span ng-model="error">{{error}}</span>
-    <div ng-repeat="c in commentList">
-      <b>@{{c.Username}}</b>
-      <br/>
-      {{c.Content}}
+    <div class="header-div">
+      TNTP Solution
     </div>
+    <table>
+      <tr>
+        <td>
+          <label for="usernameField">Username:</label>
+        </td>
+        <td>
+          <input name="usernameField" type="text" ng-model="username"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <textarea name="commentField" rows="5" ng-model="comment"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span ng-model="error">{{error}}</span>
+        </td>
+        <td>
+          <button ng-click="postComment()">Post</button>
+        </td>
+      </tr>
+      <tr ng-repeat="c in commentList">
+        <td colspan="2">
+          <b>@{{c.Username}}</b>
+          <br/>
+          <div class="content-div">{{c.Content}}</div>
+          <br/>
+          <span class="timestamp-div">{{c.CreationTimestamp}}</span>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

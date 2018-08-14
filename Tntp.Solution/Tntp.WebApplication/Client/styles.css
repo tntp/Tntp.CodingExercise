@@ -1,0 +1,36 @@
+﻿table {
+    width: 25%;
+    margin: auto;
+    font-size: large;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+textarea {
+    width: 100%;
+}
+
+button {
+    float: right;
+    margin-bottom: 0.5em;
+}
+
+.header-div {
+    margin: auto;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.content-div {
+    word-break: break-all;
+}
+
+.timestamp-div {
+    float: right;
+    font-style: italic;
+    font-size: small;
+}

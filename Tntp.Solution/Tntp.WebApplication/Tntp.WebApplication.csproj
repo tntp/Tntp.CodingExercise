@@ -105,6 +105,7 @@
   <ItemGroup>
     <Content Include="Client\application.js" />
     <Content Include="Client\index.html" />
+    <Content Include="Client\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
