@@ -13,29 +13,34 @@
       TNTP Solution
     </div>
     <table>
+      <colgroup>
+        <col span="1" style="width: 20%"/>
+        <col span="1" style="width: 70%"/>
+        <col span="1" style="width: 10%"/>
+      </colgroup>
       <tr>
         <td>
-          <label for="usernameField">Username:</label>
+          Username:
         </td>
-        <td>
+        <td colspan="2">
           <input name="usernameField" type="text" ng-model="username"/>
         </td>
       </tr>
       <tr>
-        <td colspan="2">
+        <td colspan="3">
           <textarea name="commentField" rows="5" ng-model="comment"></textarea>
         </td>
       </tr>
       <tr>
-        <td>
-          <span ng-model="error">{{error}}</span>
+        <td colspan="2">
+          <span class="error-span" ng-model="error">{{error}}</span>
         </td>
         <td>
           <button ng-click="postComment()">Post</button>
         </td>
       </tr>
       <tr ng-repeat="c in commentList">
-        <td colspan="2">
+        <td colspan="3">
           <b>@{{c.Username}}</b>
           <br/>
           <div class="content-div">{{c.Content}}</div>

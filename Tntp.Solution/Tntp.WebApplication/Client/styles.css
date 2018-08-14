@@ -4,12 +4,11 @@
     font-size: large;
 }
 
-input {
-    width: 100%;
+input, textarea, button {
     margin-bottom: 0.5em;
 }
 
-textarea {
+input, textarea {
     width: 100%;
 }
 
@@ -33,4 +32,9 @@ button {
     float: right;
     font-style: italic;
     font-size: small;
+}
+
+.error-span {
+    font-size: smaller;
+    color: red;
 }

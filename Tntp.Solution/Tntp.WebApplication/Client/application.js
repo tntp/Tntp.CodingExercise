@@ -6,7 +6,11 @@
     });
 
     $scope.postComment = function() {
-        $http.post("http://localhost:61781/api/comments", { Username: $scope.username, Content: $scope.comment }).catch(function(response) {
+        $http.post("http://localhost:61781/api/comments", { Username: $scope.username, Content: $scope.comment }).then(function(response) {
+            $scope.username = "";
+            $scope.comment = "";
+            $scope.error = "";
+        }).catch(function(response) {
             if(response.status == BadRequestStatusCode) {
                 $scope.error = response.data.Message;
             }
