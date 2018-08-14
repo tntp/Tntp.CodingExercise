@@ -9,5 +9,6 @@ namespace Tntp.WebApplication.Models
     public interface IRepository : IDisposable
     {
         IDbSet<Comment> Comments { get; }
+        void SaveChanges();
     }
 }

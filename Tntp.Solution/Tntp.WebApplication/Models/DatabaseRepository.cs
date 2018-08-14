@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 
 namespace Tntp.WebApplication.Models
 {
@@ -13,10 +14,12 @@ namespace Tntp.WebApplication.Models
 
         public IDbSet<Comment> Comments
         {
-            get
-            {
-                return _databaseContext.Comments;
-            }
+            get { return _databaseContext.Comments; }
+        }
+
+        public void SaveChanges()
+        {
+            _databaseContext.SaveChanges();
         }
 
         public void Dispose()
