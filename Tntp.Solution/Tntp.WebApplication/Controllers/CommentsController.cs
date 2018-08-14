@@ -31,7 +31,7 @@ namespace Tntp.WebApplication.Controllers
         [HttpPost]
         public IHttpActionResult AddComment(Comment comment)
         {
-            if(comment.Username?.Length == 0)
+            if((comment.Username?.Length ?? 0) == 0)
             {
                 return BadRequest("A username is required.");
             }
@@ -39,7 +39,7 @@ namespace Tntp.WebApplication.Controllers
             {
                 return BadRequest(string.Format("A username must not exceed {0} characters.", UsernameMaxLength));
             }
-            else if(comment.Content?.Length == 0)
+            else if((comment.Content?.Length ?? 0) == 0)
             {
                 return BadRequest("A comment is required.");
             }
