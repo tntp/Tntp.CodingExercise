@@ -14,7 +14,7 @@ input, textarea {
 
 button {
     float: right;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 .header-div {
@@ -30,6 +30,7 @@ button {
 
 .timestamp-div {
     float: right;
+    margin-top: 0.5em;
     font-style: italic;
     font-size: small;
 }
@@ -37,4 +38,18 @@ button {
 .error-span {
     font-size: smaller;
     color: red;
+}
+
+.comment-length-span {
+    font-style: italic;
+}
+
+.comments-table {
+    border-spacing: 0px 10px;
+    border-collapse: separate;
+}
+
+.comments-td {
+    border: 1px solid gray;
+    padding: 0.5em;
 }

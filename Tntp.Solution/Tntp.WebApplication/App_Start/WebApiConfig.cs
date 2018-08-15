@@ -3,6 +3,7 @@ using SimpleInjector.Integration.WebApi;
 using SimpleInjector.Lifestyles;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using Tntp.WebApplication.Controllers;
 using Tntp.WebApplication.Models;
 
 namespace Tntp.WebApplication
@@ -14,6 +15,7 @@ namespace Tntp.WebApplication
             // Web API configuration and services
             var container = new Container();
             container.Register<IRepository, DatabaseRepository>(new AsyncScopedLifestyle());
+            container.RegisterSingleton<IWebSocketHub, CommentsWebSocketHub>();
             container.RegisterWebApiControllers(configuration);
             container.Verify();
 

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html style="width: 100%" ng-app="CommentsClient">
   <head>
-    <title>TNTP Solution in Client Subfolder</title>
+    <title>TNTP Solution</title>
 	  <meta charset="UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="Client/styles.css">
@@ -15,8 +15,8 @@
     <table>
       <colgroup>
         <col span="1" style="width: 20%"/>
-        <col span="1" style="width: 70%"/>
-        <col span="1" style="width: 10%"/>
+        <col span="1" style="width: 60%"/>
+        <col span="1" style="width: 20%"/>
       </colgroup>
       <tr>
         <td>
@@ -28,7 +28,7 @@
       </tr>
       <tr>
         <td colspan="3">
-          <textarea name="commentField" rows="5" ng-model="comment"></textarea>
+          <textarea name="commentField" rows="5" ng-model="comment" ng-change="updateCommentLength()"></textarea>
         </td>
       </tr>
       <tr>
@@ -36,15 +36,17 @@
           <span class="error-span" ng-model="error">{{error}}</span>
         </td>
         <td>
+          <span class="comment-length-span">{{commentLength}}</span>
           <button ng-click="postComment()">Post</button>
         </td>
       </tr>
+    </table>
+    <table class="comments-table">
       <tr ng-repeat="c in commentList">
-        <td colspan="3">
+        <td class="comments-td">
           <b>@{{c.Username}}</b>
           <br/>
           <div class="content-div">{{c.Content}}</div>
-          <br/>
           <span class="timestamp-div">{{c.CreationTimestamp}}</span>
         </td>
       </tr>

@@ -1,10 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tntp.WebApplication.Controllers;
-using System;
+﻿using System;
 using System.Linq;
-using Tntp.WebApplication.Models;
-using System.Web.Http.Results;
 using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Results;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tntp.WebApplication.Controllers;
+using Tntp.WebApplication.Models;
 
 namespace Tntp.WebApplication.Tests
 {
@@ -18,7 +20,10 @@ namespace Tntp.WebApplication.Tests
         {
             _repository.Comments.Add(new Comment { Username = "Eddard", Content = "Stark", CreationTimestamp = DateTime.Now.AddDays(-1) });
             _repository.Comments.Add(new Comment { Username = "Jon", Content = "Snow", CreationTimestamp = DateTime.Now });
-            _controller = new CommentsController(_repository);
+
+            _controller = new CommentsController(_repository, new MockWebSocketHub());
+            _controller.Request = new HttpRequestMessage();
+            _controller.Configuration = new HttpConfiguration();
         }
 
         [TestMethod]
@@ -90,6 +95,7 @@ namespace Tntp.WebApplication.Tests
             var result = _controller.AddComment(new Comment { Username = "Davos", Content = "Seaworth" }) as StatusCodeResult;
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+            Assert.AreEqual(3, _repository.Comments.Count());
         }
     }
 }
