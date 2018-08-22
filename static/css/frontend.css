@@ -1,0 +1,12 @@
+li {
+    margin: 15px;
+    border-radius: 10px;
+}
+
+li:nth-child(even) {
+    background: #ed5042 !important;
+}
+
+li:nth-child(odd) {
+    background: #d1c7c6 !important;
+}

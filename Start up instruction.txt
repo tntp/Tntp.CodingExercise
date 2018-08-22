@@ -1,0 +1,7 @@
+# Please clone 
+# Install all necessary packages
+    npm Install
+    
+# to run the application
+    node server.js (in the terminal in the same directory)
+    go to browser and hit localhost:3000 
