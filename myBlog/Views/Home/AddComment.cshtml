@@ -1,0 +1,22 @@
+﻿@model myBlog.Models.BlogModel.CommentMD
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Post New Comment</h2>
+        @using (Html.BeginForm("PostComment", "Home", FormMethod.Post, new { id = "commentForm" }))
+        {
+            @Html.ValidationSummary(true)
+            @Html.AntiForgeryToken()
+
+            <p>Your Name:&nbsp;@Html.EditorFor(i => i.CommentUserName, new { @class = "form-control" })</p>
+            <p class="error-message"> @Html.ValidationMessageFor(i => i.CommentUserName)</p>
+            <br />
+
+          <p>Your Comment:&nbsp;@Html.TextAreaFor(i => i.CommentText, new { @class = "form-control" })</p>
+        <p class="error-message"> @Html.ValidationMessageFor(i => i.CommentText)</p>
+            <br />
+
+            <input class="btn btn-info" type="submit" value="submit"/>
+        }
+    </div>
+</div>
