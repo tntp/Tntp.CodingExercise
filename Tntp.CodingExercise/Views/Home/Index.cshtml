@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Developers</h2>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>BirthDate</td>
+        <td>DeathDate</td>
+        <td>Title</td>
+    </tr>
+    @foreach (Tntp.CodingExercise.Models.Developer d in ViewBag.Developers)
+    {
+        <tr>
+            <td>@d.ID</td>
+            <td>@d.FirstName</td>
+            <td>@d.LastName</td>
+            <td>@d.BirthDate</td>
+            <td>@d.DeathDate</td>
+            <td>@d.Title</td>
+        </tr>
+    }
+</table>
+<br />
+<b>@ViewBag.DevelopersInserted New Developers Inserted</b>
+<hr />
+
+<h2>Contribs</h2>
+<table>
+    <tr>
+        <td>Developer_ID</td>
+        @*<td>FirstName</td>
+        <td>LastName</td>
+        <td>BirthDate</td>*@
+        <td>Contrib</td>
+    </tr>
+    @foreach (Tntp.CodingExercise.Models.Contrib c in ViewBag.Contribs)
+    {
+        <tr>
+            <td>@c.Developer_ID</td>
+            @*<td>FirstName</td>
+            <td>LastName</td>
+            <td>BirthDate</td>*@
+            <td>@c.Name</td>
+        </tr>
+    }
+</table>
+<br />
+<b>@ViewBag.ContribsInserted New Contribs Inserted</b>
+<hr />
+
+<h2>Awards</h2>
+<table>
+    <tr>
+        <td>Developer_ID</td>
+        @*<td>FirstName</td>
+        <td>LastName</td>
+        <td>BirthDate</td>*@
+        <td>Award</td>
+        <td>Year</td>
+        <td>GivenBy</td>
+    </tr>
+    @foreach (Tntp.CodingExercise.Models.Award a in ViewBag.Awards)
+    {
+        <tr>
+            <td>@a.Developer_ID</td>
+            @*<td>FirstName</td>
+            <td>LastName</td>
+            <td>BirthDate</td>*@
+            <td>@a.Name</td>
+            <td>@a.Year</td>
+            <td>@a.By</td>
+        </tr>
+    }
+</table>
+<br />
+<b>@ViewBag.AwardsInserted New Awards Inserted</b>
+<hr />
+
+<b>MongoDB 'bios' Documents Read: @ViewBag.DocumentsRead</b>
