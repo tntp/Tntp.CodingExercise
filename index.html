@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <title>Simple Twitter</title>
+    <script>
+        function testResults () {
+
+            var name = document.getElementById("name").value;
+            var comm = document.getElementById("comment").value;
+
+            var url = "./sendFormData?name=" + name + "&comment=" + comm;
+            loadURL(url, function(data) {
+                console.log("data sent");
+            });
+        }
+        
+        function checkLength() {
+            var fieldLength = document.getElementById("comment").value.length;
+            //We need to limit comment to 140 characters
+            if(fieldLength<=140){
+                return true;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+<div id="details">
+    <h1>Simple Twitter</h1>
+    <form name=main_form id="main_form" method = "get" enctype="multipart/form-data">
+        <fieldset>
+            <label for="name">Enter user-name:</label>
+            <input type="text" id="name" name="name" placeholder="alomalopes" required/>
+            <br/>
+            <br/>
+            <label for="comment">Enter your comment:</label>
+            <input type="text" id="comment" name="comment" placeholder="It is such a nice day today!" onkeypress="checkLength()"/>
+            <br/>
+            <input INPUT TYPE="button" NAME="button" Value="Click" onClick="testResults()"/>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
