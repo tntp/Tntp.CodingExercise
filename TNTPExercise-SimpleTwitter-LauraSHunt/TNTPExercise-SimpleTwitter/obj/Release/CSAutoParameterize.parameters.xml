@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SimpleTwitterEntities-Web.config Connection String" description="SimpleTwitterEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.SimpleTwitter.csdl|res://*/Models.SimpleTwitter.ssdl|res://*/Models.SimpleTwitter.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\TNTPExercise-SimpleTwitter.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\LauraSHunt\\source\\repos\\TNTPExercise-SimpleTwitter-Azure\\TNTPExercise-SimpleTwitter\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SimpleTwitterEntities']/@connectionString" />
+  </parameter>
+</parameters>
