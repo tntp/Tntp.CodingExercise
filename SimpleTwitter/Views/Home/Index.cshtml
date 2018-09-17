@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script>
+    function myFunction() {
+        //var x = event.keyCode;
+        var res;
+        //if (x == 13) {
+        res = document.getElementById("messageContent").value;
+        var curr = document.getElementById("post").innerHTML;
+        var name = document.getElementById("myname").value;
+        var time = new Date().toString();
+       
+        if ($.trim(name) == '') {
+            document.getElementById("err").innerHTML = "Error:Name Cannot be Empty";
+            return;
+        }
+        if ($.trim(res) == '') {
+            document.getElementById("err").innerHTML = "Error:Message Cannot be Empty";
+            return;
+        }
+
+        if ($.trim(res).length > 140) {
+            document.getElementById("err").innerHTML = "Error:Message exceeds 140 Chars";
+            return;
+        }
+        document.getElementById("post").innerHTML =  name + " : " + res + "<br>" + time + "<br>"  + curr;
+        document.getElementById("messageContent").value = "";
+
+        //var id = document.getElementById("id").value;
+        //var content = document.getElementById("content").value;
+        writeToFile(name, document.getElementById("post").innerHTML );
+
+        //}
+    }
+
+    function writeToFile(d1, d2) {
+        var fso = new ActiveXObject("Scripting.FileSystemObject");
+        var fh = fso.OpenTextFile("data.txt", 8, false, 0);
+        fh.WriteLine(d1 + ',' + d2);
+        fh.Close();
+    }
+
+</script>
+
+
+<div class="jumbotron">
+    <h2>Welcome To Simple Twitter</h2>
+    <p id="err"></p>
+    <!--<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p> -->
+    <!--  <p><a href="" class="btn btn-primary btn-lg">Post&raquo;</a></p>-->
+</div>
+
+<div data-role="body" data-theme="c">
+
+    <label> Name </label><br />
+    <textarea id="myname" rows="2" cols="1000" maxlength="140">
+    
+    </textarea>
+    <br />
+</div>
+<div data-role="body" data-theme="c">
+
+    <label>Message </label><br />
+    <textarea id="messageContent" rows="2" cols="1000" maxlength="200">
+
+            </textarea>
+    <br />
+
+
+
+    <div class="ui-grid-a">
+
+        <div class="ui-block-a"><a href="#" id="sendMessageButton" data-role="button" onclick="myFunction()">Post Message</a></div>
+    </div>
+
+    <p id="post">
+
+    </p>
+
+</div>
+
+
+
+
+
+<!-- < div class="row" >
+            <div class="col-md-4">
+                <h2>Welcome To Simple Twitter</h2>
+                <p>
+                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Get more libraries</h2>
+                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Web Hosting</h2>
+                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            </div>
+</div > -->
